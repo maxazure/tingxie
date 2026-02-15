@@ -1,0 +1,38 @@
+# macOS
+.DS_Store
+*.swp
+*~
+
+# Xcode
+build/
+DerivedData/
+*.xcuserdata
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+xcuserdata/
+
+# Xcode - Scheme Management
+*.xcscheme
+
+# Swift Package Manager
+.build/
+Packages/
+Package.pins
+Package.resolved
+*.workspace/xcshareddata/swiftpm/
+
+# CocoaPods
+Pods/
+
+# IDE
+.idea/
+.vscode/
+
+# Gemini / Agent
+.gemini/
+.agent/
+CLAUDE.md
