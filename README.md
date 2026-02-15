@@ -1,139 +1,145 @@
+**English** | [中文](README.zh-CN.md)
+
 # 🎙️ TingXie (听写)
 
-> **自带 API Key，零月费的 macOS AI 语音输入工具。**
+> **Bring your own API Key. Zero subscription fees. macOS AI voice input.**
 
-TingXie 是一款 macOS 菜单栏语音输入工具——按住快捷键说话，松开后 AI 自动润色、纠错、输入到光标位置。使用你自己的 Groq / OpenAI API Key，**不收任何订阅费**。
+TingXie is a macOS menu bar voice input tool — hold a hotkey to speak, release to get AI-polished text inserted at your cursor. Use your own Groq / OpenAI API Key with **no subscription fees**.
 
 ---
 
-## 🏆 为什么选 TingXie？
+## 🏆 Why TingXie?
 
-| | TingXie | 其他语音输入工具 |
+| | TingXie | Other Voice Input Tools |
 |---|---|---|
-| 💰 **费用** | **免费** — 用自己的 API Key（Groq 免费额度足够日常使用） | $9.99/月起 |
-| 🧠 **AI 润色** | ✅ 自动去除"嗯啊那个"、纠正口误、热词纠错 | 部分支持 |
-| 🎯 **场景感知** | ✅ 自动识别当前 App，切换技术/正式/日常语气 | ❌ |
-| 🌐 **实时翻译** | ✅ 说中文输出英文（或其他 6 种语言） | 部分支持 |
-| ⚡ **零延迟** | ✅ Always-on 引擎 + 环形缓冲区，不吞首字 | 常见 0.5-1s 延迟 |
-| 🔒 **隐私** | ✅ API Key 仅存本地，音频处理后即删 | 数据上传至第三方 |
+| 💰 **Cost** | **Free** — use your own API Key (Groq free tier is more than enough) | From $9.99/month |
+| 🧠 **AI Polish** | ✅ Auto-removes filler words, fixes speech errors, hot-word correction | Partial |
+| 🎯 **Context-Aware** | ✅ Detects current app, switches between technical/formal/casual tone | ❌ |
+| 🌐 **Live Translation** | ✅ Speak Chinese, output English (or 6 other languages) | Partial |
+| ⚡ **Zero Latency** | ✅ Always-on engine + ring buffer, never misses the first word | Typical 0.5-1s delay |
+| 🔒 **Privacy** | ✅ API Keys stored locally, audio deleted after processing | Data uploaded to third-party |
 
 ---
 
-## ✨ 核心特性
+## ✨ Key Features
 
-- **🎤 按住说话，松开即得** — 按住右 Option 键录音，松开自动识别并输入。
-- **🧹 智能润色** — AI 自动清理语气词（嗯、啊、那个）、修复口误、规范标点。
-- **📝 热词纠错** — 自定义专有名词表（如 "CLAUDE.md"、"FastAPI"），ASR 识别错误时自动纠正。
-- **🎭 场景感知语气** — 在 VS Code 中自动切换技术风格，在邮件中切换正式风格，在微信中切换日常风格。每种风格的提示词均可自定义。
-- **🌍 实时翻译** — 支持中→英、英→中、日语、韩语、法语、德语等多种语言。
-- **⚡ 零延迟录音** — 采用 Always-on 音频引擎 + 环形缓冲区，按下热键前 0.5 秒的音频已在缓存中，彻底消除"吞首字"问题。
-- **📜 历史记录** — 自动保存最近 50 条转写记录，支持分页浏览。
+- **🎤 Hold to Speak, Release to Type** — Hold the right Option key to record, release to transcribe and insert.
+- **🧹 Smart Polish** — AI automatically removes filler words (um, uh, like), fixes slips of the tongue, and normalizes punctuation.
+- **📝 Hot-Word Correction** — Define your own glossary (e.g. "CLAUDE.md", "FastAPI"). The AI auto-corrects ASR misrecognitions to match your terms.
+- **🎭 Context-Aware Tone** — Automatically switches to technical style in VS Code, formal style in Mail, casual style in messaging apps. Each style prompt is fully customizable.
+- **🌍 Live Translation** — Supports Chinese↔English, Japanese, Korean, French, German, and more.
+- **⚡ Zero-Latency Recording** — Always-on audio engine with a ring buffer pre-captures ~0.5s of audio before the hotkey press. No more swallowed first words.
+- **📜 History** — Automatically saves the last 50 transcriptions with pagination.
 
 ---
 
-## 🚀 快速上手
+## 🚀 Getting Started
 
-### 1. 系统要求
+### 1. Requirements
 
 - macOS 14.0+
-- Xcode 16+（用于编译）
+- Xcode 16+ (to build from source)
 
-### 2. 获取 API Key（免费）
+### 2. Get an API Key (Free)
 
-TingXie 使用你自己的 API Key，推荐使用 **Groq**（免费额度充足）：
+TingXie uses your own API Key. We recommend **Groq** — generous free tier, blazing fast:
 
-1. 前往 [console.groq.com](https://console.groq.com) 注册账号
-2. 创建一个 API Key
-3. 完成！Groq 提供慷慨的免费额度，覆盖语音识别（Whisper）和文本润色（LLM）
+1. Go to [console.groq.com](https://console.groq.com) and sign up
+2. Create an API Key
+3. Done! Groq's free tier covers both Whisper (ASR) and LLM (text polish)
 
-> 💡 也可以使用 OpenAI API Key，但 Groq 免费额度通常已足够日常使用。
+> 💡 You can also use an OpenAI API Key, but Groq's free tier is usually more than enough for daily use.
 
-### 3. 编译运行
+### 3. Build & Run
 
 ```bash
 git clone https://github.com/maxazure/tingxie.git
 cd tingxie
 open TingXie.xcodeproj
-# 在 Xcode 中按 Command + R 运行
+# Press Command + R in Xcode to run
 ```
 
-### 4. 首次设置
+### 4. First-Time Setup
 
-1. **授权权限**：首次运行会提示授权「麦克风」和「辅助功能」权限。
-2. **配置 API Key**：点击菜单栏图标 → 设置 → 在 "API Keys" 区域填入你的 Groq API Key。
-3. **开始使用**：在任意文本框中，按住右 Option 键说话 → 松开 → 文字自动输入！
+1. **Grant Permissions**: macOS will prompt for Microphone and Accessibility access.
+2. **Set API Key**: Click the menu bar icon → Settings → enter your Groq API Key under "API Keys".
+3. **Start Using**: In any text field, hold right Option to speak → release → text appears!
 
 ---
 
-## ⚙️ 设置说明
+## ⚙️ Settings
 
-| 设置项 | 说明 |
+| Setting | Description |
 |---|---|
-| **ASR 语音识别** | 选择 Groq Whisper（推荐）、OpenAI Whisper 或自建服务器 |
-| **LLM 文本润色** | 选择 Groq 或 OpenAI，可自定义系统提示词 |
-| **应用风格提示词** | 🔧 技术 / 📝 正式 / 💬 日常 三种风格，每种均可展开编辑详细提示词 |
-| **实时翻译** | 开启后，说一种语言自动翻译为目标语言输出 |
-| **热词纠错** | 添加常用专有名词，AI 自动纠正 ASR 识别错误 |
-| **快捷键** | 默认右 Option 键，按住录音松开识别 |
+| **ASR Provider** | Groq Whisper (recommended), OpenAI Whisper, or self-hosted server |
+| **LLM Polish** | Groq or OpenAI, with customizable system prompt |
+| **App Style Prompts** | 🔧 Technical / 📝 Formal / 💬 Casual — each with a detailed, editable prompt |
+| **Live Translation** | Enable to auto-translate speech output to a target language |
+| **Hot Words** | Custom glossary for AI to correct ASR misrecognitions |
+| **Hotkey** | Default: right Option key (hold to record, release to transcribe) |
 
 ---
 
-## ⚡ 为什么选择 Groq？
+## ⚡ Why Groq?
 
-我们选择 [Groq](https://groq.com) 作为默认服务商，是因为它的推理速度极快——语音识别和文本润色几乎在瞬间完成，整个输入过程**基本没有延迟**，体验非常流畅。配合 Always-on 音频引擎，从按下热键到文字出现在光标位置，整个链路的延迟感趋近于零。
+We chose [Groq](https://groq.com) as the default provider because of its **incredible inference speed** — both speech recognition and text polishing complete almost instantly. Combined with the always-on audio engine, the entire pipeline from hotkey press to text appearing at your cursor feels **virtually lag-free**.
 
-Groq 提供慷慨的免费额度，覆盖 Whisper 语音识别和 LLM 文本润色两项服务，日常使用完全够用。
-
----
-
-## 🆚 和豆包、讯飞语音输入法有什么不同？
-
-TingXie 和传统语音输入法（如豆包、讯飞）的核心区别在于：**TingXie 会用大语言模型（LLM）对语音输入进行智能润色。**
-
-- **传统语音输入法**：语音 → 文字，原样输出 ASR 识别结果，口语化、有语气词、标点混乱。
-- **TingXie**：语音 → 文字 → **AI 润色** → 输出。自动清理语气词、纠正口误、规范标点、匹配当前应用的语气风格。
-
-这意味着你用 TingXie **写提示词、写邮件、写技术文档**的时候特别方便——说出来的话经过 AI 处理后直接就是可用的书面文本，识别率和可读性都很高。
+Groq offers a generous free tier covering both Whisper ASR and LLM text polishing — more than enough for daily use.
 
 ---
 
-## 🔒 隐私说明
+## 🆚 How Is This Different from Regular Voice Input?
 
-- 所有 API Key 仅存储在你本地的 macOS `UserDefaults` 中，不会上传到任何第三方服务器。
-- 录音文件在处理完成后立即从本地删除。
-- 使用自己的 API Key 调用 Groq / OpenAI 服务，数据传输遵循这些服务商的隐私政策。
+Traditional voice input tools (like iFlytek, Google Voice Typing, or Apple Dictation) simply convert speech to text as-is — full of filler words, messy punctuation, and informal phrasing.
 
-> 💡 如果对隐私有更高要求，TingXie 也支持配置**自建 ASR 服务器**，实现完全本地化的语音识别链路，数据不出你的网络。
+**TingXie goes further**: Speech → Text → **AI Polish** → Output.
 
----
+- Automatically cleans up filler words and speech disfluencies
+- Corrects slips of the tongue
+- Normalizes punctuation and formatting
+- Adapts tone to match the app you're using
 
-## 🗺️ 路线图
-
-我们会持续关注中国用户的需求，计划逐步引入优质的**中国本地语音识别服务商**。这些服务商的价格更具优势，远低于市面上的订阅方案。特别是如果用户拥有社区积分（Credit），例如在[魔搭社区 (ModelScope)](https://modelscope.cn) 等平台上，甚至可以**完全免费**使用相关 ASR 和 LLM 服务。
-
-- [ ] 接入国内 ASR 服务商（如阿里云语音识别、魔搭社区模型）
-- [ ] 接入国内 LLM 服务商（如通义千问、DeepSeek）
-- [ ] 语音编辑选中文本（Speak to Edit）
-- [ ] 语音指令（删除/撤销/清空）
-- [ ] 实时流式听写
+This makes TingXie especially powerful for **writing prompts, composing emails, and drafting technical docs** — your spoken words come out as clean, publication-ready text.
 
 ---
 
-## 🏗️ 技术架构
+## 🔒 Privacy
+
+- All API Keys are stored locally in macOS `UserDefaults` — never uploaded anywhere.
+- Audio files are deleted immediately after processing.
+- Your own API Key calls Groq / OpenAI directly; data handling follows their respective privacy policies.
+
+> 💡 For maximum privacy, TingXie also supports **self-hosted ASR servers**, keeping your voice data entirely within your own network.
+
+---
+
+## 🗺️ Roadmap
+
+We're actively exploring integration with **Chinese domestic ASR/LLM providers** that offer highly competitive pricing — far cheaper than subscription-based alternatives. Some providers, such as [ModelScope (魔搭社区)](https://modelscope.cn), even allow **completely free** usage if you have community credits.
+
+- [ ] Integrate Chinese ASR providers (Alibaba Cloud ASR, ModelScope models)
+- [ ] Integrate Chinese LLM providers (Qwen, DeepSeek)
+- [ ] Speak-to-Edit (voice-edit selected text)
+- [ ] Voice commands (delete / undo / clear)
+- [ ] Real-time streaming transcription
+
+---
+
+## 🏗️ Architecture
 
 ```
-按住右 Option → 录音 (AAC 16kHz) → 松开 → ASR 识别 → LLM 润色 → 粘贴到光标
+Hold Right Option → Record (AAC 16kHz) → Release → ASR → LLM Polish → Paste at Cursor
 ```
 
-- **语言**: Swift 5 + SwiftUI
-- **录音**: AVAudioEngine (Always-on + Ring Buffer)
+- **Language**: Swift 5 + SwiftUI
+- **Recording**: AVAudioEngine (Always-on + Ring Buffer)
 - **ASR**: Groq Whisper / OpenAI Whisper
-- **LLM**: Groq / OpenAI (可选模型)
-- **热键**: CoreGraphics Event Taps
-- **文本插入**: 剪贴板 + 模拟 Cmd+V（自动保存/恢复剪贴板内容）
+- **LLM**: Groq / OpenAI (configurable models)
+- **Hotkey**: CoreGraphics Event Taps
+- **Text Insertion**: Clipboard + simulated Cmd+V (auto-saves/restores clipboard)
 
 ---
 
 ## 📄 License
 
-MIT License — 自由使用、修改和分发。
+MIT License — free to use, modify, and distribute.
